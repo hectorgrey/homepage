@@ -1,6 +1,12 @@
 {% extends "base" %}
-{% block title %}Home Page{% endblock title %}
+{% block title %}FreeBSD{% endblock title %}
 {% block content %}
-<h1>Under Construction</h1>
-<p>This website is currently under construction. There is nothing to see here.</p>
+<h1>FreeBSD</h1>
+<p>Where Linux is heavily inspired by Unix, FreeBSD started life as a direct
+port of the Unix operating system used at Berkley university for intel's x86
+archtecture; originally under the name of 386BSD.  While Linux and FreeBSD are
+superficially very similar, they are structured quite differently, and FreeBSD
+is far more stable, making it an excellent option for running a server.</p>
+
+<p>This page will eventually contain articles about FreeBSD.</p>
 {% endblock content %}
