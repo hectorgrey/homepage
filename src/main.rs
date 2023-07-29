@@ -15,6 +15,11 @@ fn index() -> Template {
     Template::render("index", context!())
 }
 
+#[get("/articles/<article_index>")]
+fn display_article(article_index: usize) -> Template {
+    Template::render("article", context!())
+}
+
 #[get("/rust")]
 fn rust() -> Template {
     Template::render("rust", context!())
@@ -34,6 +39,6 @@ fn freebsd() -> Template {
 fn rocket() -> _ {
     rocket::build()
         .attach(Template::fairing())
-        .mount("/", routes![index, rust, linux, freebsd])
+        .mount("/", routes![index, rust, linux, freebsd, display_article])
         .mount("/", FileServer::from(relative!("static")))
 }
