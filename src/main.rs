@@ -10,6 +10,8 @@ use rocket_dyn_templates::{
     context,
 };
 
+mod article;
+
 #[get("/")]
 fn index() -> Template {
     Template::render("index", context!())
