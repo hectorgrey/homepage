@@ -1,6 +1,9 @@
 {% extends "base" %}
 {% block title %}Home Page{% endblock title %}
 {% block content %}
-<h1>Under Construction</h1>
-<p>This website is currently under construction. There is nothing to see here.</p>
+<h1>HectorGrey's Website</h1>
+<p>This website is currently under construction.  It will eventually include
+content about programming in Rust, and using Linux and FreeBSD as alternatives
+to Windows and MacOS.  It will most likely also include content about table-top
+RPGs.</p>
 {% endblock content %}

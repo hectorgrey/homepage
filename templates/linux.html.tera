@@ -1,6 +1,12 @@
 {% extends "base" %}
 {% block title %}Home Page{% endblock title %}
 {% block content %}
-<h1>Under Construction</h1>
-<p>This website is currently under construction. There is nothing to see here.</p>
+<h1>Linux</h1>
+<p>For those few of you who made it to this website without knowing what Linux
+is, Linux is a Unix inspired operating system which can run on many different
+types of hardware, from phones (Android runs on the Linux kernel) through
+regular laptop and desktop computers, to small computers like the Rasperry
+Pi.</p>
+
+<p>This page will eventually link to articles on the subject of Linux.</p>
 {% endblock content %}
