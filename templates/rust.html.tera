@@ -1,5 +1,5 @@
 {% extends "base" %}
-{% block title %}Home Page{% endblock title %}
+{% block title %}Rust{% endblock title %}
 {% block content %}
 <h1>Under Construction</h1>
 <p>This website is currently under construction. There is nothing to see here.</p>

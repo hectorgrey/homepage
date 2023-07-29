@@ -1,5 +1,5 @@
 {% extends "base" %}
-{% block title %}Home Page{% endblock title %}
+{% block title %}Linux{% endblock title %}
 {% block content %}
 <h1>Linux</h1>
 <p>For those few of you who made it to this website without knowing what Linux
