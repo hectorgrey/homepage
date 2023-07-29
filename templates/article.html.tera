@@ -1,4 +1,4 @@
 {% extends "base" %}
-{% block title %}{% endblock title %}
+{% block title %}Article {{index}}{% endblock title %}
 {% block content %}
 {% endblock content %}

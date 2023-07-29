@@ -17,7 +17,7 @@ fn index() -> Template {
 
 #[get("/articles/<article_index>")]
 fn display_article(article_index: usize) -> Template {
-    Template::render("article", context!())
+    Template::render("article", context!(index: article_index))
 }
 
 #[get("/rust")]
