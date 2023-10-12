@@ -32,15 +32,10 @@ fn linux() -> Template {
     Template::render("linux", context!())
 }
 
-#[get("/freebsd")]
-fn freebsd() -> Template {
-    Template::render("freebsd", context!())
-}
-
 #[launch]
 fn rocket() -> _ {
     rocket::build()
         .attach(Template::fairing())
-        .mount("/", routes![index, rust, linux, freebsd, display_article])
+        .mount("/", routes![index, rust, linux, display_article])
         .mount("/", FileServer::from(relative!("static")))
 }

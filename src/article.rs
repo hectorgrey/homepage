@@ -3,7 +3,6 @@ use std::fmt::Display;
 pub enum ArticleCategory {
     Rust,
     Linux,
-    FreeBSD,
 }
 
 impl Display for ArticleCategory {
@@ -11,7 +10,6 @@ impl Display for ArticleCategory {
         match self {
             ArticleCategory::Rust => write!(f, "Rust"),
             ArticleCategory::Linux => write!(f, "Linux"),
-            ArticleCategory::FreeBSD => write!(f, "FreeBSD"),
         }
     }
 }
