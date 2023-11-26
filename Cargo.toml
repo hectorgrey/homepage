@@ -7,13 +7,13 @@ edition = "2021"
 
 [dependencies]
 markdown = "1.0.0-alpha.11"
-rocket = "=0.5.0-rc.3"
+rocket = "0.5"
 
 [dependencies.rocket_dyn_templates]
-version = "=0.1.0-rc.3"
+version = "0.5"
 features = ["tera"]
 
 [dependencies.rocket_db_pools]
-version = "0.1.0-rc.3"
+version = "0.5"
 features = ["sqlx_sqlite"]
 
