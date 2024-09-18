@@ -1,6 +1,7 @@
 #[macro_use]
 extern crate rocket;
 
+use article::Article;
 use rocket::fs::{relative, FileServer};
 
 use rocket_dyn_templates::{context, Template};
@@ -14,7 +15,7 @@ fn index() -> Template {
 
 #[get("/articles/<article_index>")]
 fn display_article(article_index: usize) -> Template {
-	Template::render("article", context!(index: article_index))
+	Template::render("article", context!(content: Article::from_idx(index)))
 }
 
 #[get("/rust")]
