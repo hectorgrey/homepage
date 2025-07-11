@@ -3,9 +3,14 @@ extern crate rocket;
 
 use rocket::fs::{relative, FileServer};
 
+use rocket_db_pools::{sqlx, Database};
 use rocket_dyn_templates::{context, Template};
 
 mod article;
+
+#[derive(Database)]
+#[database("sqlite")]
+struct Blog(sqlx::SqlitePool);
 
 #[get("/")]
 fn index() -> Template {
@@ -36,6 +41,7 @@ fn freebsd() -> Template {
 fn rocket() -> _ {
 	rocket::build()
 		.attach(Template::fairing())
+		.attach(Blog::init())
 		.mount("/", routes![index, rust, linux, freebsd, display_article])
 		.mount("/", FileServer::from(relative!("static")))
 }
