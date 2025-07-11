@@ -1,0 +1,10 @@
+{% extends "base" %}
+{% block title %}Linux{% endblock title %}
+{% block content %}
+<h1>FreeBSD</h1>
+<p>FreeBSD is an operating system descended from the Berkley College distribution
+of UNIX.  Superficially, it works a lot like Linux, but under the hood it is very
+different.</p>
+
+<p>This page will eventually link to articles on the subject of FreeBSD.</p>
+{% endblock content %}
