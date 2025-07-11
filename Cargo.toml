@@ -10,10 +10,10 @@ markdown = "1.0.0-alpha.20"
 rocket = "0.5"
 
 [dependencies.rocket_dyn_templates]
-version = "0.1"
+version = "0.2"
 features = ["tera"]
 
 [dependencies.rocket_db_pools]
-version = "0.1"
+version = "0.2"
 features = ["sqlx_sqlite"]
 
