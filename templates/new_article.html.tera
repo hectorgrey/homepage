@@ -1,0 +1,20 @@
+{% extends "base" %}
+{% block title %}New Article{% endblock title %}
+{% block content %}
+<h1>New Article</h1>
+<form action="/article" method="post">
+<p><label for="title">Title:</label>
+<input type="text" name="title" id="title" required /></p>
+<p><label for="category">Category:</label>
+<select name="category" id="category">
+<option value="">Please select a category</option>
+<option value="Rust">Rust</option>
+<option value="Linux">Linux</option>
+<option value="FreeBSD">FreeBSD</option>
+<option value="Other">Other</option>
+</select>
+</p>
+<p><textarea name="content" id="content" rows="30" cols="120"></textarea></p>
+<p><button type="submit">Submit</button></p>
+</form>
+{% endblock content %}

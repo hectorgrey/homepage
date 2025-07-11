@@ -1,7 +1,9 @@
+use crate::Blog;
 use std::fmt::Display;
 
 use rocket_db_pools::{sqlx, Connection};
 
+#[derive(FromFormField, Clone, Debug)]
 pub enum ArticleCategory {
 	Rust,
 	Linux,
@@ -31,6 +33,7 @@ impl From<String> for ArticleCategory {
 	}
 }
 
+#[derive(FromForm, Clone, Debug)]
 pub struct Article {
 	pub title: String,
 	pub content: String,
@@ -38,7 +41,7 @@ pub struct Article {
 }
 
 impl Article {
-	pub async fn read(mut db: Connection<crate::Blog>, id: i64) -> Option<Article> {
+	pub async fn read(mut db: Connection<Blog>, id: i64) -> Option<Article> {
 		let row: Result<Option<(String, String, String)>, sqlx::Error> =
 			sqlx::query_as("select title, content, category from articles where id = ?")
 				.bind(id)
@@ -54,5 +57,15 @@ impl Article {
 			}
 		}
 		None
+	}
+
+	pub async fn add(mut db: Connection<Blog>, article: Article) -> sqlx::Result<()> {
+		sqlx::query("insert into articles values(NULL, $1, $2, $3)")
+			.bind(article.title)
+			.bind(article.content)
+			.bind(article.category.to_string())
+			.execute(&mut **db)
+			.await?;
+		Ok(())
 	}
 }
