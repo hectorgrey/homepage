@@ -16,4 +16,3 @@ features = ["tera"]
 [dependencies.rocket_db_pools]
 version = "0.2"
 features = ["sqlx_sqlite"]
-
