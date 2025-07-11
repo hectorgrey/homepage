@@ -17,7 +17,7 @@ impl Display for ArticleCategory {
 }
 
 pub struct Article {
-	id: u32,
+	id: i64,
 	title: String,
 	content: String,
 	category: ArticleCategory,
